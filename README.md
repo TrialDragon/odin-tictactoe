@@ -4,5 +4,5 @@
 exercise understanding of OOP in ruby
 
 ## how-to-use
-`gem install ruby2d`
+`bundle install`
 `ruby tictactoe.rb`
