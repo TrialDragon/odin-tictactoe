@@ -13,6 +13,10 @@ class Grid
     (vertical_win? player_symbol or horizontal_win? player_symbol or diagonal_win? player_symbol)
   end
 
+  def display
+
+  end
+
   private
 
   def vertical_win?(player_symbol)
@@ -47,13 +51,29 @@ class Grid
 end
 
 class Player
+  attr_reader :symbol
 
+  def initialize(symbol)
+    @symbol = symbol
+  end
+
+  def square_choice; end
 end
 
 class UserPlayer < Player
-
+  def square_choice
+    input = -1
+    until (1..9).member? input
+      puts 'Input the square you wish to place.'
+      input = gets.to_i
+    end
+    input
+  end
 end
 
 class RobotPlayer < Player
-
+  def square_choice
+    prng = Random.new
+    prng.rand(1..9)
+  end
 end
