@@ -1,4 +1,3 @@
-require 'raylib'
 require 'pry-byebug'
 
 class Grid
