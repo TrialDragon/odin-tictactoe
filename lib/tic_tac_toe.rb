@@ -67,18 +67,21 @@ end
 class UserPlayer < Player
   def square_choice
     input = -1
-    until (1..9).member? input
-      puts 'Input the square you wish to place.'
+    input_two = -1
+    until ((1..3).member? input) && ((1..3).member? input_two)
+      puts 'Input the row you wish to place.'
       input = gets.to_i
+      puts 'Input the col you wish to place.'
+      input_two = gets.to_i
     end
-    input
+    [input, input_two]
   end
 end
 
 class RobotPlayer < Player
   def square_choice
     prng = Random.new
-    prng.rand(1..9)
+    [prng.rand(1..3), prng.rand(1..3)]
   end
 end
 
