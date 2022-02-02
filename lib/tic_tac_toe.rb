@@ -81,3 +81,19 @@ class RobotPlayer < Player
     prng.rand(1..9)
   end
 end
+
+game_grid = Grid.new
+
+case choose_players
+when 1
+  player_x = UserPlayer.new :X
+  player_o = RobotPlayer.new :O
+when 2
+  player_x = UserPlayer.new :X
+  player_o = UserPlayer.new :O
+end
+
+win = false
+until win
+  
+end
