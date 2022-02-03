@@ -93,6 +93,15 @@ class RobotPlayer < Player
   end
 end
 
+def choose_players
+  num_of_players = 0
+  until (1..2).member? num_of_players
+    puts 'Input a number of players 1 -- 2'
+    num_of_players = gets.to_i
+  end
+  num_of_players
+end
+
 game_grid = Grid.new
 
 case choose_players
