@@ -6,7 +6,7 @@ class Grid
 
   def initialize
     @grid_side_length = 3
-    @symbol_array = Array.new(@grid_side_length) { Array.new(@grid_side_length) }
+    @symbol_array = Array.new(@grid_side_length) { Array.new(@grid_side_length) { '' } }
   end
 
   def won?(player_symbol)
