@@ -127,6 +127,7 @@ until win
       valid_choice = true
     end
   end
+  game_grid.display
   win = game_grid.won? current_player
   winner = current_player if win
 end
