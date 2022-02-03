@@ -97,6 +97,8 @@ when 2
 end
 
 win = false
+turn_counter = 1
 until win
-  
+  current_player = turn_counter.even? ? player_x : player_o
+  player_choice = current_player.square_choice
 end
