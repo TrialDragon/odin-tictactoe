@@ -21,6 +21,14 @@ class Grid
          #{symbol_array[2][0]}|#{symbol_array[2][1]}|#{symbol_array[2][2]}\\n"
   end
 
+  def array(indices)
+    symbol_array[indices[0]][indices[1]]
+  end
+
+  def array_assign(indices, value)
+    symbol_array[indices[0]][indices[1]] = value
+  end
+
   private
 
   def vertical_win?(player_symbol)
@@ -96,9 +104,20 @@ when 2
   player_o = UserPlayer.new :O
 end
 
+winner = Player.new :wrong
 win = false
-turn_counter = 1
+turn_counter = 0
 until win
+  turn_counter += 1
   current_player = turn_counter.even? ? player_x : player_o
-  player_choice = current_player.square_choice
+  valid_choice = false
+  until valid_choice
+    player_choice = current_player.square_choice
+    if game_grid.array(player_choice).empty?
+      game_grid.array_assign(player_choice, current_player.symbol)
+      valid_choice = true
+    end
+  end
+  win = game_grid.won? current_player
+  winner = current_player if win
 end
