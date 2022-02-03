@@ -1,12 +1,14 @@
 require 'pry-byebug'
 
+
 class Grid
   attr_accessor :symbol_array
-  attr_reader :grid_side_length
+  attr_reader :grid_side_length, :default_grid_character
 
   def initialize
     @grid_side_length = 3
-    @symbol_array = Array.new(@grid_side_length) { Array.new(@grid_side_length) { '' } }
+    @default_grid_character = ' '
+    @symbol_array = Array.new(@grid_side_length) { Array.new(@grid_side_length) { @default_grid_character } }
   end
 
   def won?(player_symbol)
@@ -122,7 +124,7 @@ until win
   valid_choice = false
   until valid_choice
     player_choice = current_player.square_choice
-    if game_grid.array(player_choice).empty?
+    if game_grid.array(player_choice) == game_grid.default_grid_character
       game_grid.array_assign(player_choice, current_player.symbol)
       valid_choice = true
     end
