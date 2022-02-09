@@ -16,11 +16,11 @@ class Grid
   end
 
   def display
-    puts "#{symbol_array[0][0]}|#{symbol_array[0][1]}|#{symbol_array[0][2]}\\n
-         ─┼─┼─┼─\\n
-         #{symbol_array[1][0]}|#{symbol_array[1][1]}|#{symbol_array[1][2]}\\n
-         ─┼─┼─┼─\\n
-         #{symbol_array[2][0]}|#{symbol_array[2][1]}|#{symbol_array[2][2]}\\n"
+    puts "#{symbol_array[0][0]}|#{symbol_array[0][1]}|#{symbol_array[0][2]}
+─┼─┼─
+#{symbol_array[1][0]}|#{symbol_array[1][1]}|#{symbol_array[1][2]}
+─┼─┼─
+#{symbol_array[2][0]}|#{symbol_array[2][1]}|#{symbol_array[2][2]}\n"
   end
 
   def array(indices)
