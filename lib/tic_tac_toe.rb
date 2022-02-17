@@ -11,8 +11,8 @@ class Grid
     @symbol_array = Array.new(@grid_side_length) { Array.new(@grid_side_length) { @default_grid_character } }
   end
 
-  def won?(player_symbol)
-    (vertical_win? player_symbol or horizontal_win? player_symbol or diagonal_win? player_symbol)
+  def won?(player)
+    (vertical_win?(player.symbol) or horizontal_win?(player.symbol) or diagonal_win?(player.symbol))
   end
 
   def display
