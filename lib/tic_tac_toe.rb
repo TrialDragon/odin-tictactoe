@@ -133,3 +133,5 @@ until win
   win = game_grid.won? current_player
   winner = current_player if win
 end
+
+puts "Congratz! #{winner.symbol} has won!"
