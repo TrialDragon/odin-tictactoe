@@ -33,7 +33,7 @@ class Grid
 
   private
 
-  def vertical_win?(player_symbol)
+  def horizontal_win?(player_symbol)
     result = false
     @symbol_array.each do |element|
       result ||= element.all? do |symbol|
@@ -43,7 +43,7 @@ class Grid
     result
   end
 
-  def horizontal_win?(player_symbol)
+  def vertical_win?(player_symbol)
     first_array = Array.new(3)
     second_array = Array.new(3)
     third_array = Array.new(3)
