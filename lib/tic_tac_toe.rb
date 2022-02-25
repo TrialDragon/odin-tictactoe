@@ -44,15 +44,13 @@ class Grid
   end
 
   def vertical_win?(player_symbol)
-    first_array = Array.new(3)
-    second_array = Array.new(3)
-    third_array = Array.new(3)
-    @symbol_array.each do |element|
-      first_array.push element[0] == player_symbol
-      second_array.push element[1] == player_symbol
-      third_array.push element[2] == player_symbol
+    column_results = Array.new(3) { true }
+    (0..3).each do |i|
+      @symbol_array.each do |inner_array|
+        column_results[i] &&= inner_array[i] == player_symbol
+      end
     end
-    (first_array.all? || second_array.all? || third_array.all?)
+    column_results.any?
   end
 
   def diagonal_win?(player_symbol)
